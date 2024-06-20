@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://eeow1nsrj34v"]
+
+[ext_resource type="Script" path="res://Boid.gd" id="1_3wobs"]
+[ext_resource type="Texture2D" uid="uid://bhqrfahg73sbk" path="res://Boid.png" id="1_8mngf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vap0i"]
+
+[node name="Boid" type="CharacterBody2D" groups=["Boid"]]
+scale = Vector2(0.037, 0.037)
+script = ExtResource("1_3wobs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+process_mode = 4
+visible = false
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-184.39, -1036.45, -324.651, -782.179, -693.659, -113.226, -640.976, 531.291, -166.829, 966.774, 96.5852, 966.774, 658.536, 496.452, 588.293, -182.903, 8.78052, -1106.13)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1515.06, 1515.06)
+mesh = SubResource("CapsuleMesh_vap0i")
+texture = ExtResource("1_8mngf")
